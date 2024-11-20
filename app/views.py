@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from .layers.services import services
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from .layers.transport import transport
 
 def index_page(request):
     return render(request, 'index.html')
@@ -22,10 +23,15 @@ def search(request):
 
     # si el texto ingresado no es vacío, trae las imágenes y favoritos desde services.py,
     # y luego renderiza el template (similar a home).
+    images=[]
+    images=services.getAllImages()
+     
     if (search_msg != ''):
-        pass
+        images= transport.getAllImages(search_msg)
+        return render(request, 'home.html', { 'images': images})
     else:
         return redirect('home')
+    
 
 
 # Estas funciones se usan cuando el usuario está logueado en la aplicación.
