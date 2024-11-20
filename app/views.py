@@ -4,7 +4,6 @@ from django.shortcuts import redirect, render
 from .layers.services import services
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from .layers.transport import transport
 
 def index_page(request):
     return render(request, 'index.html')
@@ -27,7 +26,7 @@ def search(request):
     images=services.getAllImages()
      
     if (search_msg != ''):
-        images= transport.getAllImages(search_msg)
+        images= services.buscador(search_msg)
         return render(request, 'home.html', { 'images': images})
     else:
         return redirect('home')

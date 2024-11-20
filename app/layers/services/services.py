@@ -17,6 +17,13 @@ def getAllImages(input=None):
 
     return images
 
+def buscador(input):
+    json_collection = transport.getAllImages(input)
+    images = []
+    for elem in json_collection:
+        images.append(translator.fromRequestIntoCard(elem))
+    return images
+
 # añadir favoritos (usado desde el template 'home.html')
 def saveFavourite(request):
     fav = '' # transformamos un request del template en una Card.
