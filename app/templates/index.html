@@ -1,9 +1,12 @@
 {% extends 'header.html' %} {% block content %} {% if request.user.is_authenticated %}
 <h2 class="text-center">Bienvenido {{ user.username | upper }}!</h2>
 {% else %}
-<h2 class="text-center">Bienvenido!</h2>
+<h2 class="text-center">Wubba Lubba Dub Dub! Bienvenido!</h2>
 {% endif %}
 <p class="text-center">
     Mirá las imágenes desde <a href="{% url 'home' %}">este link.</a>
 </p>
+<div id="rymImage">
+    <img src="https://www.pngplay.com/wp-content/uploads/12/Rick-And-Morty-Wallpaper-PNG-Photo-Image.png" alt="Rick y morty portal">
+</div>
 {% endblock %}

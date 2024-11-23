@@ -2,12 +2,23 @@
 <main>
     <h1 class="text-center">Buscador Rick & Morty</h1>
 
-    <div class="d-flex justify-content-end" style="margin-bottom: 1%; margin-right: 2rem;">
+    <div class="d-flex justify-content-center" style="margin-top: 5%">
+        <!-- Buscador del sitio -->
+        <form class="d-flex" action="{% url 'buscar' %}" method="POST">
+            {% csrf_token %}
+            <input class="form-control me-2" type="search" name="query" placeholder="Busca tu personaje" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+    </div>
+
+    <div class="d-flex justify-content-end" style="margin-bottom: -4%; margin-top: 6%; margin-right: 2rem;">
         <!-- Selector de página -->
         <nav aria-label="...">
             <ul class="pagination">
-                <li class="page-item disabled">
-                    <a class="page-link">⬅️</a>
+                <li class="page-item">
+                    <a class="page-link"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 15.5 17.5">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                      </svg></a>
                 </li>
                 <li class="page-item active" aria-current="page">
                     <a class="page-link" href="#">1</a>
@@ -17,24 +28,21 @@
                 </li>
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                 <li class="page-item">
-                    <a class="page-link" href="#">➡️</a>
+                    <a class="page-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 15.5 17.5">
+                        <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                      </svg></a>
                 </li>
             </ul>
         </nav>
     </div>
 
-    <div class="d-flex justify-content-center" style="margin-bottom: 1%">
-        <!-- Buscador del sitio -->
-        <form class="d-flex" action="{% url 'buscar' %}" method="POST">
-            {% csrf_token %}
-            <input class="form-control me-2" type="search" name="query" placeholder="Escribí una palabra" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
-    </div>
-
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {% if images|length == 0 %}
+        <div id="mortyImg">
+            <img src="https://preview.redd.it/4yks7n8rx9h81.png?auto=webp&s=646b65ae75919a64df6ead0fff622f63857bb278" alt="Morty Face" style= "margin-left: 65%;">
+        </div>
         <h2 class="text-center">La búsqueda no arrojó resultados...</h2>
+        
         {% else %} {% for img in images %}
         <div class="col">
             <div class="card 

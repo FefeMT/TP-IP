@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
-    color: #566787;
-    background: #f5f5f5;
-    font-family: 'Roboto', sans-serif;
+    color: #f1f1f1;
+    background: #2d2d2d;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p a {
+    text-decoration: none;
+    color: #ff00ee;
+}
+
+p a:hover {
+    color: #8d2586;
 }
 
 .table-responsive {
@@ -37,10 +48,6 @@ body {
     padding-left: 35px;
     border-color: #ddd;
     box-shadow: none;
-}
-
-.search-box input:focus {
-    border-color: #3FBAE4;
 }
 
 .search-box i {
@@ -96,6 +103,8 @@ table.table td i {
     font-size: 19px;
 }
 
+/* Paginacion */
+
 .pagination {
     float: right;
     margin: 0 0 5px;
@@ -106,28 +115,34 @@ table.table td i {
     font-size: 95%;
     width: 30px;
     height: 30px;
-    color: #999;
+    color: #f1f1f1;
     margin: 0 2px;
     line-height: 30px;
     border-radius: 30px !important;
     text-align: center;
     padding: 0;
+    background-color: #8d2586
 }
 
-.pagination li a:hover {
-    color: #666;
+.page-item.active .page-link {
+    background-color: #ff00ee;
 }
 
 .pagination li.active a {
-    background: #03A9F4;
+    background: #ff00ee;
 }
 
 .pagination li.active a:hover {
-    background: #0397d6;
+    background: #008dc4;
 }
 
-.pagination li.disabled i {
-    color: #ccc;
+.pagination li a:hover {
+    background: #008dc4;
+    color: #f1f1f1;
+}
+
+.pagination li a:focus {
+    background-color: #8d2586
 }
 
 .pagination li i {
@@ -140,3 +155,99 @@ table.table td i {
     margin-top: 6px;
     font-size: 95%;
 }
+
+/* Header */
+
+.nav-link, a.navbar-brand{
+    color: #ff00ee;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 2rem;
+}
+
+.nav-link:hover{
+    color: #8d2586;
+}
+
+/* Index */
+
+#rymImage {
+    text-align: center;
+}
+
+#rymImage img {
+    height: 70vh;
+}
+
+/* Main */
+
+div.card-body, div.col-md-4 {
+    background-color: #343434;
+}
+
+.row {
+    margin-top: calc(2 * var(--bs-gutter-y));
+    margin-bottom: calc(4 * var(--bs-gutter-y));
+    margin-right: calc(.5 * var(--bs-gutter-x));    /* Ajustar margin y eliminar barra deslizante */
+    margin-left: calc(-1.5 * var(--bs-gutter-x));
+}
+
+/* Search Bar */
+
+.form-control {
+    background-color: #232123;
+    color: #f1f1f1;
+}
+
+.form-control:focus {
+    background-color: #232123;
+    color: #f1f1f1;
+    border-color: #ff00ee;
+}
+
+.btn {
+    color: #ff00ee;
+    border-color: #ff00ee;
+}
+
+.btn:hover {
+    background-color: #ff00ee;
+    color: #f1f1f1;
+}
+
+.btn-outline-success:hover {
+    color: #f1f1f1;
+    background-color: #ff00ee;
+    border-color: #ff00ee;
+}
+
+#mortyImg img{
+    height: 20vh;
+    position: absolute;
+  }
+
+/* Sign In */
+
+#username {
+    margin-top: 40px;
+}
+
+#login-text {
+    background-color: rgba(35, 33, 35, .6);
+    border-radius: 6px;
+}
+
+.background {
+    background-image: url('https://wallpapercat.com/w/full/1/f/5/46701-3840x2160-desktop-4k-rick-and-morty-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 92vh;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
