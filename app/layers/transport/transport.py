@@ -6,6 +6,9 @@ from ...config import config
 # comunicación con la REST API.
 # este método se encarga de "pegarle" a la API y traer una lista de objetos JSON crudos (raw).
 def getAllImages(input=None):
+    
+    # este 'if' devuelve una lista de personajes de la APPI en formato json dependiendo del input ingresado. En caso de este ser nulo, devuelve los primeros 20, en caso de recibír un input, busca los que su nombre contenga el input
+    
     if input is None:
         json_response = requests.get(config.DEFAULT_REST_API_URL).json()
     else:
@@ -29,4 +32,5 @@ def getAllImages(input=None):
             # puede ocurrir que no todos los objetos tenga la info. completa, en ese caso descartamos dicho objeto y seguimos con el siguiente en la próxima iteración.
             pass
 
+    # devuelve una lista con los personales
     return json_collection
