@@ -1,5 +1,5 @@
 {% extends 'header.html' %} {% block content %} {% if request.user.is_authenticated %}
-<h2 class="text-center">Bienvenido {{ user.username | upper }}!</h2>
+<h2 class="text-center">Wubba Lubba Dub Dub! Bienvenido {{ user.username | upper }}!</h2>
 {% else %}
 <h2 class="text-center">Wubba Lubba Dub Dub! Bienvenido!</h2>
 {% endif %}

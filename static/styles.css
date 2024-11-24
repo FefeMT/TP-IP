@@ -2,18 +2,20 @@
 
 body {
     color: #f1f1f1;
-    background: #2d2d2d;
+    background: #1e2021;  /* #2d2d2d */
     font-family: 'Montserrat', sans-serif;
 }
 
 p a {
-    text-decoration: none;
+    text-decoration: none; /* Quitamos la línea del link */
     color: #ff00ee;
 }
 
 p a:hover {
     color: #8d2586;
 }
+
+/* De acá no se tocó nada */
 
 .table-responsive {
     margin: 30px 0;
@@ -103,7 +105,7 @@ table.table td i {
     font-size: 19px;
 }
 
-/* Paginacion */
+/* Paginacion. Sólo se cambiaron los colores */
 
 .pagination {
     float: right;
@@ -188,36 +190,43 @@ table.table td i {
 /* Main */
 
 div.card-body, div.col-md-4 {
-    background-color: #343434;
+    background-color: #232123;
 }
 
 .col:hover {
     transform: translateY(-5px) scale(1.02); /* Menor movimiento y escalado */
+    transition: .3s;
+    background-color: #292929;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra más ligera */
 }
+
 .col {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .row {
     margin-top: calc(2 * var(--bs-gutter-y));
     margin-bottom: calc(4 * var(--bs-gutter-y));
-    margin-right: calc(.5 * var(--bs-gutter-x));    /* Ajustar margin y eliminar barra deslizante */
+    margin-right: calc(.5 * var(--bs-gutter-x)); /* Ajustar margin y eliminar barra deslizante inferior */
     margin-left: calc(-1.5 * var(--bs-gutter-x));
 }
 
+/* Contenedor Favoritos */
+
 .card-footer {
-    background-color: #3a343a;
+    background-color: #232123;
+    border: none;
 }
 
 /* Search Bar */
 
 .form-control {
-    background-color: #232123;
+    background-color: #232123; /* Color de la barra */
     color: #f1f1f1;
 }
 
 .form-control:focus {
-    background-color: #232123;
+    background-color: #232123; /* Color cuando la barra está seleccionada */
     color: #f1f1f1;
     border-color: #ff00ee;
 }
@@ -250,26 +259,25 @@ div.card-body, div.col-md-4 {
 }
 
 #login-text {
-    background-color: rgba(35, 33, 35, .6);
+    background-color: rgba(35, 33, 35, .8);
     border-radius: 6px;
 }
 
 .background {
     background-image: url('https://wallpapercat.com/w/full/1/f/5/46701-3840x2160-desktop-4k-rick-and-morty-background-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: cover; /* El bg se ajusta a la pantalla */
+    background-position: center; 
+    background-repeat: no-repeat; /* No se repite en caso de que la página sea larga */
     height: 92vh;
     color: #f1f1f1;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Conseguimos que no cambie las ubicaciones de los contenidos como el login */
     justify-content: center;
-    align-items: center;
-    text-align: center;
   }
 
 /* LISTADO DE FAVORITOS */
 
+/* Título */
 .col-sm-8 {
     color: #008dc4;
     width: 100%;
@@ -281,12 +289,16 @@ div.card-body, div.col-md-4 {
     0% { color: #ff6600; }
     50% { color: #ffcc00; }
     100% { color: #ff6600; }
-  }
+}
+
+/* Tabla */
 
 .table-wrapper {
-    background-color: #ebe1e1;
+    background-color: #323232;
+    border-radius: 12px;
 }
 
 #tabla {
     border: 2px solid #888;
+    color: #f1f1f1;
 }

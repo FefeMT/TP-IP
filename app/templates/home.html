@@ -42,7 +42,12 @@
             <img src="https://preview.redd.it/4yks7n8rx9h81.png?auto=webp&s=646b65ae75919a64df6ead0fff622f63857bb278" alt="Morty Face" style= "margin-left: 65%;">
         </div>
         <h2 class="text-center">La búsqueda no arrojó resultados...</h2>
-        
+        <!-- Escondemos el paginador cuando no hay resultados -->
+        <style>
+            .pagination li a {
+                visibility: hidden;
+            }
+        </style> 
         {% else %} {% for img in images %}
         <div class="col">
             <div class="card 
@@ -61,11 +66,11 @@
                             <h3 class="card-title">{{ img.name }}</h3>
                             <p class="card-text">
                                 <strong>
-                                            {% if img.status == 'Alive' %} 🟢 {{ img.status }} 
-                                            {% elif img.status == 'Dead' %} 🔴 {{ img.status }} 
-                                            {% else %} 🟠 {{ img.status }} 
-                                            {% endif %}
-                                        </strong>
+                                    {% if img.status == 'Alive' %} 🟢 {{ img.status }} 
+                                    {% elif img.status == 'Dead' %} 🔴 {{ img.status }} 
+                                    {% else %} 🟠 {{ img.status }} 
+                                    {% endif %}
+                                </strong>
                             </p>
                             <p class="card-text"><small class="text-body-secondary">Última ubicación: {{ img.last_location }}</small></p>
                             <p class="card-text"><small class="text-body-secondary">Episodio inicial: {{ img.first_seen }}</small></p>
@@ -79,8 +84,8 @@
                                 <input type="hidden" name="status" value="{{ img.status }}">
                                 <input type="hidden" name="last_location" value="{{ img.last_location }}">
                                 <input type="hidden" name="first_seen" value="{{ img.first_seen }}"> {% if img in favourite_list %}
-                                <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white" disabled>✔️ Ya está en favoritos</button> {% else %}
-                                <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white">❤️ Añadir a favoritos</button> {% endif %}
+                                <button type="submit" class="btn btn-sm float-left" style="color:white" disabled>✔️ Ya está en favoritos</button> {% else %}
+                                <button type="submit" class="btn btn-sm float-left" style="color:white">❤️ Añadir a favoritos</button> {% endif %}
                             </form>
                         </div>
                         {% endif %}
