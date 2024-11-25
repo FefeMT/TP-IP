@@ -17,6 +17,7 @@ def getAllImages(input=None):
 
     return images
 
+# ejecuta la función de 'getAllImages' del archivo transport con el input de la barra de busqueda y los devuelve en una lista
 def buscador(input):
     json_collection = transport.getAllImages(input)
     images = []
