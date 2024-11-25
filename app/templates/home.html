@@ -4,10 +4,10 @@
 
     <div class="d-flex justify-content-center" style="margin-top: 5%">
         <!-- Buscador del sitio -->
-        <form class="d-flex" action="{% url 'buscar' %}" method="POST">
+        <form  class="d-flex" action="{% url 'buscar' %}" method="POST" id="searchForm">
             {% csrf_token %}
             <input class="form-control me-2" type="search" name="query" placeholder="Busca tu personaje" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
+            <button class="btn btn-outline-success" type="submit" id="searchForm">Buscar</button>
         </form>
     </div>
 

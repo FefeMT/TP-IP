@@ -120,3 +120,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # VARIABLES QUE INTEGRAN LOS REDIRECTS DE AUTH
 LOGIN_REDIRECT_URL = 'index-page'
 LOGOUT_REDIRECT_URL = 'index-page'
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Esto hace que Django busque archivos estáticos en la carpeta 'static'
+]
